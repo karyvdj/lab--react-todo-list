@@ -1,0 +1,78 @@
+body{
+    font-family: Poppins;
+}
+.app, .container{
+    max-width: 800px;
+    margin: 0 auto;   
+}
+
+.container{
+    border: 1px solid #abb1b5;
+    border-radius: 3px;
+}
+
+header{
+    background: #64c9cb;
+    padding: .5em;
+    color: white;
+    text-align: center;
+}
+
+form{
+    margin: 1em;
+    padding:  0 0 1em 0;
+    border-bottom: 1px solid #abb1b5;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    padding: .7em;
+    min-width: 200px;
+}
+ 
+.task__list{
+    margin: 1em;
+}
+
+.task__list--item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task_name{
+    flex: 0 0 65%;
+}
+
+button{
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    height: max-content;
+    padding: .5em 1em;
+    border-radius: 5px;
+    font-size: .8em;
+}
+
+button.delete{
+    color: #c41863;
+}
+
+button.create{
+    background:  #c41863;
+    color: white;
+}
+
+button.status-done{
+    background: #64ace3;
+    color: white;
+    flex: 0 0 15%;
+}
+
+button.status-process{
+    border:1px solid #64ace3;
+    background: white;
+    color: #64ace3;
+    flex: 0 0 15%;
+}
