@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 
 class Task extends Component {
-    state = {
-        isDone: false
-    }
-
-    handleStatusClick = e => {
-        this.setState({
-          isDone: !this.state.isDone
-        });
-    };
     
     handleDeleteClick = () => {
         console.log('click')
@@ -17,15 +8,29 @@ class Task extends Component {
         onDelete(task.id);
     };
 
+    handleStatusClick = e => {
+        const { task, onChange } = this.props;
+        onChange(task.id);
+    };
+    
+    handleCriticalClick = e => {
+        const {task, onChangeCritical } = this.props;
+        onChangeCritical(task.id);
+    }
+
     render() {
         const { task } = this.props
         
         return (
-           <li className="task__list--item">
-               <button className={`${this.state.isDone ? `status-done`: `status-process` }`} onClick={this.handleStatusClick} > 
-                    {this.state.isDone ? "Done" : "In Process"}
+           <li className={`task__list--item ${task.critical === true ? `critical` : `` }`}>
+               <button className={`${task.status === true ? `status-done` : `status-process` }`} onClick={this.handleStatusClick} > 
+                    {task.status === true ? "Done" : "In Process"}
                </button>
-               <p className="task_name">{task.task}</p>
+               <div className="task">
+                    <p className="task_name">{task.task}</p>
+                    <p className="task_date">{task.date}</p>
+               </div>
+               
                <button onClick={this.handleDeleteClick} className="delete">Delete</button>
            </li>
         )  

@@ -1,5 +1,6 @@
 body{
     font-family: Poppins;
+    background: #e9e7e8;
 }
 .app, .container{
     max-width: 800px;
@@ -8,6 +9,7 @@ body{
 
 .container{
     border: 1px solid #abb1b5;
+    background: white;
     border-radius: 3px;
 }
 
@@ -24,25 +26,42 @@ form{
     border-bottom: 1px solid #abb1b5;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-
+.field_create{
+    display: flex;
+    align-items: center;
+    
+}
 input{
     padding: .7em;
     min-width: 200px;
 }
  
 .task__list{
-    margin: 1em;
+    padding: 0;
 }
 
 .task__list--item{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1em;
 }
-
-.task_name{
+.critical{
+    background: #b9caed;
+    color: white;
+}
+.task{
     flex: 0 0 65%;
+}
+.task_name{
+    margin-bottom: 0;
+}
+.task_date{
+    font-size: .8em;
+    margin-top: 0;
+    color: gray;
 }
 
 button{
@@ -57,6 +76,7 @@ button{
 
 button.delete{
     color: #c41863;
+    background: transparent
 }
 
 button.create{

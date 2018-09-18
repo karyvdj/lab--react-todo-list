@@ -9,12 +9,13 @@ class ContainerTasks extends Component {
         this.props.onDeleteTask(id);
     };
 
+
     render() {
-        const { onCreateTask, tasks } = this.props
+        const { onCreateTask, tasks, onChangeStatus, onChangeCritical} = this.props
         return (
             <section className="container">
                 <NewTaskForm onCreateTask={onCreateTask}/>
-                <TasksList tasks={tasks} onDeleteTask={this.handleDeleteTask}/>
+                <TasksList tasks={tasks} onDeleteTask={this.handleDeleteTask} onChangeStatus={onChangeStatus} onChangeCritical={onChangeCritical}/>
             </section>
         )  
     }

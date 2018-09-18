@@ -8,8 +8,9 @@ class TasksList extends Component {
         this.props.onDeleteTask(id);
     };
 
+
     render() {
-        const { tasks } = this.props
+        const { tasks, onChangeStatus, onChangeCritical } = this.props
     
         return (
             <div>
@@ -18,7 +19,7 @@ class TasksList extends Component {
                 ) : (
                     <ul className="task__list">
                         {this.props.tasks.map(task =>(
-                            <Task key={task.id} task={task} onDelete={this.handleDeleteTask}/>
+                            <Task key={task.id} task={task} onDelete={this.handleDeleteTask} onChange={onChangeStatus} onChangeCritical={onChangeCritical}/>
                         ))}  
                     </ul>
                 )}
